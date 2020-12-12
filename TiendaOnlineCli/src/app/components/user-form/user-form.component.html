@@ -1,0 +1,111 @@
+<form class="needs-validation" novalidate style="width: 85%; padding-left: 180px; padding-bottom: 50px;">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">Nombre</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Apellidos</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Nombre de usuario</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div>
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username"
+          aria-describedby="inputGroupPrepend" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Este nombre se usara para entrar a la aplicación
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">Email</label>
+      <input type="email" class="form-control" id="validationCustom03" placeholder="ex: user_983@gmail.com" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Se necesitara para confirmar la cuenta.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">Contraseña</label>
+      <input type="password" class="form-control" id="validationCustom04" placeholder="Password" required>
+      <div class="invalid-feedback">
+        Please provide a valid password
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Confirmar contraseña</label>
+      <input type="password" class="form-control" id="validationCustom05" placeholder="Confirm Password" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-12 mb-12">
+
+      <!-- Exaple 1 -->
+      <div class="card example-1 scrollbar-ripe-malinka">
+        <div class="card-body">
+          <h4 id="section1"><strong>First title of the news</strong></h4>
+          <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out
+            qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan
+            mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim
+            qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic.
+            Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+          <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out
+            qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan
+            mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim
+            qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic.
+            Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+          <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out
+            qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan
+            mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim
+            qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic.
+            Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+          <p>Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out
+            qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan
+            mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim
+            qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic.
+            Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.</p>
+
+        </div>
+      </div>
+      <!-- Exaple 1 -->
+
+    </div>
+    <!-- Grid column -->
+  </div>
+
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-sm" type="submit" (click)=($event)>Confirmar</button>
+</form>

@@ -1,0 +1,26 @@
+<div class="container" style="align-content: center; padding-left: 80px;">
+  <!-- Card -->
+  <mdb-card style="width: 31%; float: left; margin: 7px;" *ngFor="let art of listArticulos">
+    <div style="height: 210px;" class="view overlay waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img [src]="art.foto" alt="Card image cap"></mdb-card-img>
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <!--Card content-->
+    <mdb-card-body style="padding-top: 5px;" >
+      <h5 class="pink-text pb-2 pt-1">{{art.categoria}}</h5>
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{art.nombre}}</h4>
+      </mdb-card-title>
+
+      <!--Text-->
+      <mdb-card-text > {{art.descripcion}}
+      </mdb-card-text>
+
+      <a href="#" mdbBtn color="primary" mdbWavesEffect >Futura Funcion</a>
+    </mdb-card-body>
+  </mdb-card>
+</div>

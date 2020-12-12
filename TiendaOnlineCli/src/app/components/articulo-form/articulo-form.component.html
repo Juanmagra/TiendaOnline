@@ -1,0 +1,94 @@
+<div class="row" style="margin-right: 15px;">
+  <div id="FormularioProducto" class="col-md-5 bd-5">
+    <!-- Default form contact -->
+    <form class="text-center border border-light " style="margin-left: 70px; margin-top: -25px;" action="#!">
+
+      <p class="h4 mb-4">Nuevo producto</p>
+
+      <!-- Name -->
+      <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Nombre"
+        [(ngModel)]="artForm.nombre" [ngModelOptions]="{standalone: true}">
+
+      <!-- precio -->
+      <input type="number" id="defaultContactFormPrice" class="form-control mb-4" placeholder="Precio"
+        [(ngModel)]="artForm.precio" [ngModelOptions]="{standalone: true}">
+
+      <input type="text" id="defaultContactFormFoto" class="form-control mb-4" placeholder="FotoUrl"
+        [(ngModel)]="artForm.foto" [ngModelOptions]="{standalone: true}">
+
+      <input type="text" id="defaultContactFormCategoria" class="form-control mb-4" placeholder="Categoria"
+        [(ngModel)]="artForm.categoria" [ngModelOptions]="{standalone: true}">
+
+      <!-- Descripcion -->
+      <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Descripción"
+          [(ngModel)]="artForm.descripcion" [ngModelOptions]="{standalone: true}"></textarea>
+      </div>
+
+      <!-- Send button -->
+      <button class="btn btn-info " style="float: left;" type="submit" (click)="nuevoArticulo()">Send</button>
+      <button class="btn btn-info " style="float: left;" type="submit"
+        (click)="generatePreview('#preview', true)">Preview</button>
+
+    </form>
+  </div>
+  <!-- Default form contact -->
+  <div class="col-md-5 bd-5" id="reset">
+
+    <mdb-card style="margin-top: -25px; margin-left: 180px; margin-right: -70px;">
+      <div style="height: 210px;" class="view overlay waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <mdb-card-img
+          src="data:image/jpeg;base64,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">
+        </mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Card content-->
+      <mdb-card-body style="padding-top: 5px;">
+        <h5 class="pink-text pb-2 pt-1">Categoria</h5>
+        <!--Title-->
+        <mdb-card-title>
+          <h4>Esto es el Nombre</h4>
+        </mdb-card-title>
+
+        <!--Text-->
+        <mdb-card-text class="text-justify"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida tincidunt interdum.
+          Vivamus  lesuada tristique.
+        </mdb-card-text>
+
+        <a mdbBtn color="primary" mdbWavesEffect>Futura Funcion</a>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+
+
+  <div class="col-md-5 bd-5" id="preview">
+
+    <mdb-card style="margin-top: -25px; margin-left: 180px; margin-right: -70px;" [(ngModel)]="artPrview">
+      <div style="height: 210px;" class="view overlay waves-light" mdbWavesEffect>
+        <!-- Card img -->
+        <mdb-card-img [src]="artPrview.foto">
+        </mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--Card content-->
+      <mdb-card-body style="padding-top: 5px;">
+        <h5 class="pink-text pb-2 pt-1">{{artPrview.categoria}}</h5>
+        <!--Title-->
+        <mdb-card-title>
+          <h4>{{artPrview.nombre}}</h4>
+        </mdb-card-title>
+
+        <!--Text-->
+        <mdb-card-text>{{artPrview.descripcion}}
+        </mdb-card-text>
+        <a mdbBtn color="primary" mdbWavesEffect (click)="resetearPreview()">Resetear preview</a>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+
+</div>
