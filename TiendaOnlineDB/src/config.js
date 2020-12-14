@@ -1,8 +1,8 @@
 import bodyParser from 'body-parser'
 import logger from 'morgan'
 import {config} from 'dotenv'
+import passport from './services/passport';
 const SETTINGS = config()
-console.log(SETTINGS)
 
 export default app =>{
     app.disable('x-powered-by');
@@ -15,7 +15,8 @@ export default app =>{
     if(SETTINGS.parsed.ENV !== 'test'){
         app.use(logger('combined'))                  
     }
-    app.use(bodyParser.json())
-    app.use(bodyParser.urlencoded({extended:false}))
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended:false}));
+    app.use(passport.initialize());
  
 }
