@@ -1,11 +1,11 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark pink ie-nav fixed-top" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark pink ie-nav fixed-top" [containerInside]="true">
   <mdb-navbar-brand>
-      <a class="logo navbar-brand" href="#"><strong>Navbar</strong></a>
+      <a class="logo navbar-brand" [routerLink]="[ '/' ]"><strong>Navbar</strong></a>
   </mdb-navbar-brand>
   <links>
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active waves-light" mdbWavesEffect>
-              <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" [routerLink]="[ '/' ]">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item waves-light" mdbWavesEffect>
               <a class="nav-link">Features</a>
@@ -30,9 +30,6 @@
       </ul>
   </links>
 </mdb-navbar>
-<br>
-<br>
-<br>
-<br>
+
 
 
