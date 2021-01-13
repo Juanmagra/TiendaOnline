@@ -16,15 +16,16 @@ const httpOptions = {
 })
 export class ArticulosService {
 
+
+
   constructor(private http: HttpClient) { }
 
-  allArticulos():Observable<[Articulo]>{
-    return this.http.get<[Articulo]>(
-      Base_Url,
-      httpOptions
-    );
-
-  }
+  // allArticulos():Observable<[Articulo]>{
+  //   return this.http.get<[Articulo]>(
+  //     Base_Url,
+  //     httpOptions
+  //   );
+  //  }
 
   nuevoArticulo(articulo:any):Observable<any>{
     return this.http.post(

@@ -1,4 +1,4 @@
-<div class="container" style="align-content: center; padding-left: 80px;">
+<div class="container" style="align-content: center; padding: left 0%;">
   <!-- Card -->
   <mdb-card style="width: 31%; float: left; margin: 7px;" *ngFor="let art of listArticulos">
     <div style="height: 210px;" class="view overlay waves-light" mdbWavesEffect>
@@ -17,7 +17,7 @@
       </mdb-card-title>
 
       <!--Text-->
-      <mdb-card-text > {{art.descripcion}}
+      <mdb-card-text class="text-justify" > {{art.descripcion}}
       </mdb-card-text>
 
       <a href="#" mdbBtn color="primary" mdbWavesEffect >Futura Funcion</a>
