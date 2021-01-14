@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import bcrypt from 'bcryptjs';
-import usuarios from '../datos/usuarios.js';
+
 
 class User {
     // modificamos el constructor, dejando el id al final para hacerlo optativo
@@ -20,7 +20,8 @@ class User {
             id: this.id,
             username: this.username,
             fullname: this.fullname,
-            email: this.email
+            email: this.email,
+            foto: this.foto
         }
     }
 
@@ -33,6 +34,11 @@ export let usuarios = [
 
 ]
 
+/**
+ * Método que nos va a permitir obtener la posición de un 
+ * usuario dentro de la colección en base a su ID
+ * Devuelve la posición si lo encuentra, y -1 si no lo encuentra.
+ */
 const indexOfPorId = (id) => {
     let posicionEncontrado = -1;
     for (let i = 0; i < usuarios.length && posicionEncontrado == -1; i++) {
@@ -42,11 +48,19 @@ const indexOfPorId = (id) => {
     return posicionEncontrado;
 }
 
+/**
+ * Función que comprueba si un email ya está
+ * definido como el email de un usuario en el repositorio
+ */
 const emailExists = (email) => {
     let emails = usuarios.map(user => user.email);
     return emails.includes(email);
 }
 
+/**
+ * Función que comprueba si un username ya está
+ * definido como el username de un usuario en el repositorio
+ */
 const usernameExists = (username) => {
     let usernames = usuarios.map(user => user.username);
     return usernames.includes(username);

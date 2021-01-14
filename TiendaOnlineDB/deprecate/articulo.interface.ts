@@ -1,5 +1,5 @@
 import { Categoria } from './categoria.interface';
-import { Comentario } from './comentario.interface';
+import { Comentario } from '../src/models/comentario.interface';
 
 export interface Articulo{
   id:string
