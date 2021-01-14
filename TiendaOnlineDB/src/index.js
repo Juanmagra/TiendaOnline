@@ -1,37 +1,63 @@
-import express from 'express';
-import config from './config.js';
-import router from './router.js';
+// Imports de librerías
+import "dotenv/config";
+import cors from "cors";
+import express from "express";
+import bodyParser from "body-parser";
+import morgan from "morgan";
+import morganBody from "morgan-body";
+
+// Imports de componentes del API
+import models from './models';
+import routes from './routes';
+
+// Imports de otros middlewares y servicios;
+import passport from './services/passport';
 
 
-let _server
+// Instanciación de la aplicación de Express
+const app = express();
 
-const server = {
-    start() {
-        const app = express()
-        config(app)
-        router(app)
-        _server = app.listen('9000', () => {
-            const address = _server.address()
-            const host = address.address==='::'
-            ?'localhost'
-            :address
-            const port = app.locals.config.PORT
-            
-            if (process.env.NODE_ENV !== 'test') {
-                console.log('Servidor abierto en http://${host}:${port}')
-            }
-        })
-        return _server
-    }, close() {
-        _server.close()
+// Inicialización y configuración de algunos middlewares
 
-    }
+// Protección CORS
+app.use(cors());
 
-}
+// body-parser, para procesar el cuerpo de las peticiones
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 
-export default server
+// Morgan y morganbody para hacer logging de las peticiones y respuestas
+app.use(morgan('dev'))
+morganBody(app);
 
-server.start()
+// Inicialización de passport
+app.use(passport.initialize());
 
 
+/*
+  Este middleware nos permite añadir alguna información al contexto de cada petición,
+  y por tanto, lo tendremos disponible en cualquier objeto req que recibamos en cualquier
+  petición de la aplicación
+*/
+app.use((req, res, next) => {
+  // Para cualquier petición, añadimos en su contexto
+  req.context = {
+    models
+  };
+  next();
+});
 
+
+// Configuración de las rutas.
+app.use('/users', routes.user);
+app.use('/auth', routes.auth)
+
+
+
+
+// Inicialización del servidor
+app.listen(process.env.PORT, () =>
+  console.log(
+    `¡Aplicación de ejemplo escuchando en el puerto ${process.env.PORT}!`
+  )
+);
