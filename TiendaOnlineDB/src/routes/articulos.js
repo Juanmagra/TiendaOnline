@@ -1,30 +1,18 @@
-import express from 'express'
-import db from '../datos/articulos'
-const router = express.Router()
-router
-    .get('/', (req, res, next) => {
-        res
-            .status(200)
-            .json(db)
-       
+import { token } from '../services/passport/index';
+import { ArticuloController } from '../controllers/articulo';
+import { Router } from 'express';
+const router = Router()
 
-    })
-    .post('/', (req, res, next) => {
-    console.log("Entrando en el post del servidor");
-        console.log('Body recived', req.body);
-        db.push(req.body)
-        res
-            .status(201)
-            .json(req.body)
-    })
+router.get('/',ArticuloController.todosLosArticulos);
+router.post('/', token(), ArticuloController.crearNuevoArticulo);
 
 
 router.get('/:categoria', (req, res, next) => {
-    const articuloByCategoria = db.filter(
+    const articuloByCategoria = ArticuloController.todosLosArticulos.filter(
         item => item.categoria.toLocaleLowerCase() == req.params.categoria.toLocaleLowerCase())
     res
         .status(200)
         .json(articuloByCategoria)
 })
 
-export default router
+export default router;

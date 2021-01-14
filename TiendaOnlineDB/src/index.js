@@ -50,7 +50,8 @@ app.use((req, res, next) => {
 
 // Configuración de las rutas.
 app.use('/users', routes.user);
-app.use('/auth', routes.auth)
+app.use('/auth', routes.auth);
+app.use('/articulo', routes.articulo);
 
 
 

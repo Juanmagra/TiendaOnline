@@ -18,6 +18,7 @@ router.post('/register', [
             } else
                 return true;
         }),
+        body('fullName').isLength({min:5}).withMessage('Longitud minima 5 caracteres'),
     body('password').isLength({min: 8}).withMessage('La contraseña debe tener como mínimoo 8 caracteres'),
     body('email')
         .isEmail()

@@ -1,5 +1,5 @@
 class Articulo {
-    constructor(nombre, descripcion, foto, categoria, precio, stock, meGusta, rebajado, retirado, id =0 ){
+    constructor(nombre, descripcion, foto, categoria, precio, stock=1, meGusta=0, rebajado=false, retirado=false, id =0 ){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -25,4 +25,7 @@ class Articulo {
 
         }
     }
+}
+export{
+    Articulo
 }
